@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AR Art Experience</title>
+
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+</head>
+
+<body style="margin:0; overflow:hidden;">
+
+<a-scene
+  vr-mode-ui="enabled: false"
+  renderer="logarithmicDepthBuffer: true;"
+  webxr="optionalFeatures: hit-test;"
+  ar-hit-test="targetEl: #artwork;"
+>
+
+  <!-- Camera -->
+  <a-camera position="0 1.6 0"></a-camera>
+
+  <!-- Light -->
+  <a-light type="directional" position="1 1 0"></a-light>
+
+  <!-- Your AR Object -->
+  <a-box
+    id="artwork"
+    position="0 0 -1"
+    material="color: #8A2BE2;"
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
+  </a-box>
+
+</a-scene>
+
+</body>
+</html>
